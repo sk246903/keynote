@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paper</title>
+	<link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+	<link rel="stylesheet" type="text/css" href="paper.css">
+	<script type="text/javascript" src="paperJs.js" ></script>
+	<script type="text/paperscript" canvas="myCanvas">
+	var myCircle = [];
+	var i = 0;	
+
+	//on keypress Event
+	function onKeyDown(event){
+	
+	//for sound
+
+	if(event.key=='a'){
+	var sounda = new Howl({
+  	src: ['sounds/bubbles.mp3']
+	});
+	sounda.play();
+	}
+	else if(event.key=='b'){
+	var soundb = new Howl({
+  	src: ['sounds/clay.mp3']
+	});
+	soundb.play();
+	}
+	else if(event.key=='c'){
+	var soundc = new Howl({
+  	src: ['sounds/confetti.mp3']
+	});
+	soundc.play();
+	}
+	else if(event.key=='d'){
+	var soundd = new Howl({
+  	src: ['sounds/dotted-spiral.mp3']
+	});
+	soundd.play();
+	}
+	else if(event.key=='e'){
+	var sounde = new Howl({
+  	src: ['sounds/flash-1.mp3']
+	});
+	sounde.play();
+	}
+	else if(event.key=='f'){
+	var soundf = new Howl({
+  	src: ['sounds/flash-2.mp3']
+	});
+	soundf.play();
+	}
+	else if(event.key=='g'){
+	var soundg = new Howl({
+  	src: ['sounds/flash-3.mp3']
+	});
+	soundg.play();
+	}
+	else if(event.key=='h'){
+	var soundh = new Howl({
+  	src: ['sounds/glimmer.mp3']
+	});
+	soundh.play();
+	}
+	else if(event.key=='i'){
+	var soundi = new Howl({
+  	src: ['sounds/moon.mp3']
+	});
+	soundi.play();
+	}
+	else if(event.key=='j'){
+	var soundj = new Howl({
+  	src: ['sounds/pinwheel.mp3']
+	});
+	soundj.play();
+	}
+	else if(event.key=='k'){
+	var soundk = new Howl({
+  	src: ['sounds/piston-1.mp3']
+	});
+	soundk.play();
+	}
+	else if(event.key=='l'){
+	var soundl = new Howl({
+  	src: ['sounds/piston-2.mp3']
+	});
+	soundl.play();
+	}
+	else if(event.key=='m'){
+	var soundm = new Howl({
+  	src: ['sounds/piston-3.mp3']
+	});
+	soundm.play();
+	}
+	else if(event.key=='n'){
+	var soundn = new Howl({
+  	src: ['sounds/prism-1.mp3']
+	});
+	soundn.play();
+	}
+	else if(event.key=='o'){
+	var soundo = new Howl({
+  	src: ['sounds/prism-2.mp3']
+	});
+	soundo.play();
+	}
+	else if(event.key=='p'){
+	var soundp = new Howl({
+  	src: ['sounds/prism-3.mp3']
+	});
+	soundp.play();
+	}
+	else if(event.key=='q'){
+	var soundq = new Howl({
+  	src: ['sounds/splits.mp3']
+	});
+	soundq.play();
+	}
+	else if(event.key=='r'){
+	var soundr = new Howl({
+  	src: ['sounds/squiggle.mp3']
+	});
+	soundr.play();
+	}
+	else if(event.key=='s'){
+	var soundsa = new Howl({
+  	src: ['sounds/strike.mp3']
+	});
+	soundsa.play();
+	}
+	else if(event.key=='t'){
+	var soundt = new Howl({
+  	src: ['sounds/suspension.mp3']
+	});
+	soundt.play();
+	}
+	else if(event.key=='u'){
+	var soundu = new Howl({
+  	src: ['sounds/timer.mp3']
+	});
+	soundu.play();
+	}
+	else if(event.key=='v'){
+	var soundv = new Howl({
+  	src: ['sounds/ufo.mp3']
+	});
+	soundv.play();
+	}
+	else if(event.key=='w'){
+	var soundw = new Howl({
+  	src: ['sounds/veil.mp3']
+	});
+	soundw.play();
+	}
+	else if(event.key=='x'){
+	var soundx = new Howl({
+  	src: ['sounds/wipe.mp3']
+	});
+	soundx.play();
+	}
+	else if(event.key=='y'){
+	var soundy = new Howl({
+  	src: ['sounds/corona.mp3']
+	});
+	soundy.play();
+	}
+	else if(event.key=='z'){
+	var soundz = new Howl({
+  	src: ['sounds/zig-zag.mp3']
+	});
+	soundz.play();
+	}
+	else{
+	var soundElse = new Howl({
+  	src: ['sounds/clay.mp3']
+	});
+	soundElse.play();
+	}
+
+	// ends here
+
+
+	var x = Math.random()*(view.size.width-8);
+	var y = Math.random()*(view.size.height-8);
+	var z = Math.random()*300;
+	var m = Math.random()*18;
+	z = Math.floor(z);
+	m = Math.floor(m);
+	while(m<5){
+	m=Math.random()*18;
+	m=Math.floor(m);
+	}
+	while(z<40){
+	z=Math.random*300;
+	z=Math.floor(z);
+}
+	myCircle[i] = new Path.RegularPolygon(x, y, m, z);
+	var r = Math.random();
+	var g = Math.random();
+	var b = Math.random();
+	myCircle[i].fillColor=new Color(r, g, b);
+	i++;
+	}
+
+	//on Mouse Click
+	function onMouseUp(event) {
+
+	var ran = Math.random()*26;
+	ran = Math.floor(ran);
+	while((ran<1)&&(ran>27)){
+	ran = Math.floor(Math.random()*26);
+	}
+
+	if(ran==1){
+	var soundma = new Howl({
+  	src: ['sounds/bubbles.mp3']
+	});
+	soundma.play();
+	}
+	else if(ran==2){
+	var soundmb = new Howl({
+  	src: ['sounds/clay.mp3']
+	});
+	soundmb.play();
+	}
+	else if(ran==3){
+	var soundmc = new Howl({
+  	src: ['sounds/cconfetti.mp3']
+	});
+	soundmc.play();
+	}
+	else if(ran==4){
+	var soundmd = new Howl({
+  	src: ['sounds/dotted-spiral.mp3']
+	});
+	soundmd.play();
+	}
+	else if(ran==5){
+	var soundme = new Howl({
+  	src: ['sounds/flash-1.mp3']
+	});
+	soundme.play();
+	}
+	else if(ran==6){
+	var soundmf = new Howl({
+  	src: ['sounds/flash-2.mp3']
+	});
+	soundmf.play();
+	}
+	else if(ran==7){
+	var soundmg = new Howl({
+  	src: ['sounds/flash-3.mp3']
+	});
+	soundmg.play();
+	}
+	else if(ran==8){
+	var soundmh = new Howl({
+  	src: ['sounds/glimmer.mp3']
+	});
+	soundmh.play();
+	}
+	else if(ran==9){
+	var soundmi = new Howl({
+  	src: ['sounds/moon.mp3']
+	});
+	soundmi.play();
+	}
+	else if(ran==10){
+	var soundmj = new Howl({
+  	src: ['sounds/pinwheel.mp3']
+	});
+	soundmj.play();
+	}
+	else if(ran==11){
+	var soundmk = new Howl({
+  	src: ['sounds/piston-1.mp3']
+	});
+	soundmk.play();
+	}
+	else if(ran==12){
+	var soundml = new Howl({
+  	src: ['sounds/piston-2.mp3']
+	});
+	soundml.play();
+	}
+	else if(ran==13){
+	var soundmm = new Howl({
+  	src: ['sounds/piston-3.mp3']
+	});
+	soundmm.play();
+	}
+	else if(ran==14){
+	var soundmn = new Howl({
+  	src: ['sounds/prism-1.mp3']
+	});
+	soundmn.play();
+	}
+	else if(ran==15){
+	var soundmo = new Howl({
+  	src: ['sounds/prism-2.mp3']
+	});
+	soundmo.play();
+	}
+	else if(ran==16){
+	var soundmp = new Howl({
+  	src: ['sounds/prism-3.mp3']
+	});
+	soundmp.play();
+	}
+	else if(ran==17){
+	var soundmq = new Howl({
+  	src: ['sounds/splits.mp3']
+	});
+	soundmq.play();
+	}
+	else if(ran==18){
+	var soundmr = new Howl({
+  	src: ['sounds/squiggle.mp3']
+	});
+	soundmr.play();
+	}
+	else if(ran==19){
+	var soundma = new Howl({
+  	src: ['sounds/strike.mp3']
+	});
+	soundma.play();
+	}
+	else if(ran==20){
+	var soundmt = new Howl({
+  	src: ['sounds/suspension.mp3']
+	});
+	soundmt.play();
+	}
+	else if(ran==21){
+	var soundmu = new Howl({
+  	src: ['sounds/timer.mp3']
+	});
+	soundmu.play();
+	}
+	else if(ran==22){
+	var soundmv = new Howl({
+  	src: ['sounds/ufo.mp3']
+	});
+	soundmv.play();
+	}
+	else if(ran==23){
+	var soundmw = new Howl({
+  	src: ['sounds/veil.mp3']
+	});
+	soundmw.play();
+	}
+	else if(ran==24){
+	var soundmx = new Howl({
+  	src: ['sounds/wipe.mp3']
+	});
+	soundmx.play();
+	}
+	else if(ran==25){
+	var soundmy = new Howl({
+  	src: ['sounds/corona.mp3']
+	});
+	soundmy.play();
+	}
+	else if(ran==26){
+	var soundmz = new Howl({
+  	src: ['sounds/zig-zag.mp3']
+	});
+	soundmz.play();
+	}
+	else{
+	var soundmElse = new Howl({
+  	src: ['sounds/clay.mp3']
+	});
+	soundmElse.play();
+	}
+
+	// ends here
+	var x = Math.random()*(view.size.width-8);
+	var y = Math.random()*(view.size.height-8);
+	var z = Math.random()*300;
+	var m = Math.random()*18;
+	z = Math.floor(z);
+	m = Math.floor(m);
+	while(m<5){
+	m=Math.random()*18;
+	m=Math.floor(m);
+	}
+	while(z<40){
+	z=Math.random*300;
+	z=Math.floor(z);
+	}
+	myCircle[i] = new Path.RegularPolygon(x, y, m, z);
+	var r = Math.random();
+	var g = Math.random();
+	var b = Math.random();
+	myCircle[i].fillColor=new Color(r, g, b);
+	i++;
+	
+}
+
+	
+
+	function onFrame(event){
+	for(var a=0;a<myCircle.length;a++){
+	myCircle[a].scale(.95);
+	}
+}
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+	<div id="copyRigth"><p>Made for Fun</p></div>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+body,html { 
+	height:100%; 
+	background :#262626;
+}
+
+#myCanvas
+{
+	height:100%;
+	width:100%;
+}
+#copyRigth{
+		font-family: 'ZCOOL KuaiLe', cursive;
+		color:#e699cc;
+		position: fixed;     
+       	text-align: center;    
+       	bottom: 0px; 
+       	width: 100%;
+       	font-weight: 300;
+       	font-size: 45px;
+		}
